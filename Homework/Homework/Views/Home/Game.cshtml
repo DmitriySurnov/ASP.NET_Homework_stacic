@@ -1,0 +1,152 @@
+﻿@model GameDataModelStatic;
+@{
+	ViewData["Title"] = "Игра";
+}
+
+<style type="text/css">
+	table {
+		width: 100px;
+		height: 100px;
+		margin: auto;
+	}
+
+	tr, td {
+		width: 32px;
+		height: 32px;
+	}
+
+	table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+
+	button {
+		margin-top: 10px;
+	}
+
+	.Cells {
+		width: 100%;
+		height: 100%;
+		margin-top: 3px;
+		border-width: 0px;
+		padding: 0px;
+	}
+</style>
+
+<div class="text-center">
+	<h1 class="display-4">
+		Привет
+		@if (GameDataModelStatic.isX)
+		{
+			<code> @GameDataModelStatic.NameUserFirst.Name </code>
+		}
+		else
+		{
+			<code> @GameDataModelStatic.NameUserSecond.Name </code>
+		}
+
+
+	</h1>
+	<form method="post" asp-area="" asp-controller="Home">
+		<table>
+			<tr>
+				<td>
+					@if (GameDataModelStatic.Fields[0] == null || GameDataModelStatic.Fields[0] == "")
+					{
+						<button class="Cells" name="idPole" value="0" asp-action="Game"></button>
+					}
+					else
+					{
+						<code>@GameDataModelStatic.Fields[0]</code>
+					}
+				</td>
+				<td>
+					@if (GameDataModelStatic.Fields[1] == null || GameDataModelStatic.Fields[1] == "")
+					{
+						<button class="Cells" name="idPole" value="1" asp-action="Game"></button>
+					}
+					else
+					{
+						<code>@GameDataModelStatic.Fields[1]</code>
+					}
+				</td>
+				<td>
+					@if (GameDataModelStatic.Fields[2] == null || GameDataModelStatic.Fields[2] == "")
+					{
+						<button class="Cells" name="idPole" value="2" asp-action="Game"></button>
+					}
+					else
+					{
+						<code>@GameDataModelStatic.Fields[2]</code>
+					}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					@if (GameDataModelStatic.Fields[3] == null || GameDataModelStatic.Fields[3] == "")
+					{
+						<button class="Cells" name="idPole" value="3" asp-action="Game"></button>
+					}
+					else
+					{
+						<code>@GameDataModelStatic.Fields[3]</code>
+					}
+				</td>
+				<td>
+					@if (GameDataModelStatic.Fields[4] == null || GameDataModelStatic.Fields[4] == "")
+					{
+						<button class="Cells" name="idPole" value="4" asp-action="Game"></button>
+					}
+					else
+					{
+						<code>@GameDataModelStatic.Fields[4]</code>
+					}
+				</td>
+				<td>
+					@if (GameDataModelStatic.Fields[5] == null || GameDataModelStatic.Fields[5] == "")
+					{
+						<button class="Cells" name="idPole" value="5" asp-action="Game"></button>
+					}
+					else
+					{
+						<code>@GameDataModelStatic.Fields[5]</code>
+					}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					@if (GameDataModelStatic.Fields[6] == null || GameDataModelStatic.Fields[6] == "")
+					{
+						<button class="Cells" name="idPole" value="6" asp-action="Game"></button>
+					}
+					else
+					{
+						<code>@GameDataModelStatic.Fields[6]</code>
+					}
+				</td>
+				<td>
+					@if (GameDataModelStatic.Fields[7] == null || GameDataModelStatic.Fields[7] == "")
+					{
+						<button class="Cells" name="idPole" value="7" asp-action="Game"></button>
+					}
+					else
+					{
+						<code>@GameDataModelStatic.Fields[7]</code>
+					}
+				</td>
+				<td>
+					@if (GameDataModelStatic.Fields[8] == null || GameDataModelStatic.Fields[8] == "")
+					{
+						<button class="Cells" name="idPole" value="8" asp-action="Game"></button>
+					}
+					else
+					{
+						<code>@GameDataModelStatic.Fields[8]</code>
+					}
+				</td>
+			</tr>
+		</table>
+		<button title="Обновить" asp-action="RestartGame">Обновить</button>
+		<button title="завершить игру" asp-action="FinishGame">завершить игру</button>
+	</form>
+</div>
